@@ -4,14 +4,40 @@ class APIHandler {
   }
 
   getFullList () {
-
+    $.ajax({
+      method: "GET",
+      url: `${this.BASE_URL}/characters`
+    })
+    .then((apiResults) => {
+      console.log("success!");
+      console.log(apiResults);
+    })
+    .catch((err) => {
+      console.log("error!");
+      console.log(err);
+    });
   }
 
-  getOneRegister () {
-
+  getOneRegister (id) {
+    $.ajax({
+      method: "GET",
+      url: `${this.BASE_URL}/characters/${id}`
+    })
+    .then((apiResults) => {
+      console.log("success!");
+      console.log(apiResults);
+    })
+    .catch((err) => {
+      console.log("error!");
+      console.log(err);
+    });
   }
 
   createOneRegister () {
+
+  }
+
+  deleteOneRegister () {
 
   }
 
@@ -19,7 +45,5 @@ class APIHandler {
 
   }
 
-  deleteOneRegister () {
 
-  }
 }

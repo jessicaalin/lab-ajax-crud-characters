@@ -1,23 +1,30 @@
-const charactersAPI = new APIHandler("http://ih-crud-api.herokuapp.com")
+const charactersAPI = new APIHandler("http://ih-crud-api.herokuapp.com");
 
 $(document).ready( () => {
-  $('#fetch-all').on('click', (e) => {
+  $('#fetch-all').click(() => {
+    console.log("click!");
+    charactersAPI.getFullList();
+  });
 
-  })
-
-  $('#fetch-one').on('click', (e) => {
-
-  })
-
-  $('#delete-one').on('click', (e) => {
-
-  })
-
-  $('#edit-character-form').on('submit', (e) => {
-
-  })
+  $('#fetch-one').click(() => {
+    console.log("click!");
+    const idNumber = $("#character-id").val();
+    charactersAPI.getOneRegister(idNumber);
+  });
 
   $('#new-character-form').on('submit', (e) => {
 
-  })
-})
+  });
+  
+  $('#delete-one').click(() => {
+    console.log("click!");
+    charactersAPI.deleteOneRegister();
+
+  });
+
+  $('#edit-character-form').on('submit', (e) => {
+
+  });
+
+
+});
